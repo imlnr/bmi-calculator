@@ -11,7 +11,7 @@ function Signup() {
     const [age, setAge] = useState('');
     const [gender, setgender] = useState('');
     const [dob, setdob] = useState('');
-    const [avatar,setavatar] = useState('');
+    const [avatar, setavatar] = useState('');
 
     const handleSignup = (e) => {
         e.preventDefault();
@@ -27,13 +27,14 @@ function Signup() {
                 <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                 <input type="number" placeholder="Age" value={age} onChange={(e) => setAge(e.target.value)} required />
                 <input type="text" placeholder="Gender" value={gender} onChange={(e) => setgender(e.target.value)} required />
-                <input type="date" placeholder="Date of Birth" value={dob} onChange={(e)=> setdob(e.target.value)} required/>
-                <input type="url" placeholder="Avatar *(link only)" value={avatar} onChange={(e)=>setavatar(e.target.value)} required/>
+                <input type="date" placeholder="Date of Birth" value={dob} onChange={(e) => setdob(e.target.value)} required />
+                <input type="url" placeholder="Avatar *(link only)" value={avatar} onChange={(e) => setavatar(e.target.value)} required />
                 <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                 <input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
                 <button type="submit">Signup</button>
             </form>
-            <Link to="/login">Already have an account? Login here</Link>
+            <div>Already have an account? <Link to="/Login"> Login here</Link></div>
+
         </div>
     );
 }
