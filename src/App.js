@@ -8,7 +8,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        {/* <Signup/> */}
         <Allroutes />
       </div>
     </BrowserRouter>
