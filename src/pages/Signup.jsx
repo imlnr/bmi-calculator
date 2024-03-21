@@ -11,12 +11,28 @@ function Signup() {
     const [age, setAge] = useState('');
     const [gender, setgender] = useState('');
     const [dob, setdob] = useState('');
+    const [phone, setPhone] = useState('')
     const [avatar, setavatar] = useState('');
 
-    const handleSignup = (e) => {
+    const handleSignup = async (e) => {
         e.preventDefault();
-        // Add signup logic here
         console.log('Signup clicked');
+        try {
+            const response = await fetch('https://bmi-json-server-thkt.onrender.com/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, age, phone, gender, dob, avatar, password })
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error(error)
+        }
     };
 
     return (
@@ -25,6 +41,7 @@ function Signup() {
             <form className='signup-form' onSubmit={handleSignup}>
                 <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
                 <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                <input type="number" placeholder="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} required />
                 <input type="number" placeholder="Age" value={age} onChange={(e) => setAge(e.target.value)} required />
                 <input type="text" placeholder="Gender" value={gender} onChange={(e) => setgender(e.target.value)} required />
                 <input type="date" placeholder="Date of Birth" value={dob} onChange={(e) => setdob(e.target.value)} required />
