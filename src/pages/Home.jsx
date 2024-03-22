@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Bmi from './Bmi';
 
 const Home = () => {
   const storeState = useSelector((state) => state);
@@ -7,7 +8,8 @@ const Home = () => {
   
   return (
     <div>
-      <pre>{JSON.stringify(storeState, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(storeState, null, 2)}</pre> */}
+      <Bmi/>
     </div>
   );
 };
