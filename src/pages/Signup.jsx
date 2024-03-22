@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../styles/Forms.css"
+import { useDispatch } from 'react-redux';
 
 function Signup() {
     const [name, setName] = useState('');
@@ -13,26 +14,12 @@ function Signup() {
     const [dob, setdob] = useState('');
     const [phone, setPhone] = useState('')
     const [avatar, setavatar] = useState('');
+    const dispatch = useDispatch();
 
     const handleSignup = async (e) => {
         e.preventDefault();
         console.log('Signup clicked');
-        try {
-            const response = await fetch('https://bmi-json-server-thkt.onrender.com/users', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name, email, age, phone, gender, dob, avatar, password })
-            });
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            console.log(data);
-        } catch (error) {
-            console.error(error)
-        }
+        dispatch(name, email, age, phone, gender, dob, avatar, password);
     };
 
     return (
