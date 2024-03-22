@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../styles/Forms.css"
 import { useDispatch } from 'react-redux';
+import { getSignup } from '../redux/action';
+
 
 function Signup() {
     const [name, setName] = useState('');
@@ -19,7 +21,7 @@ function Signup() {
     const handleSignup = async (e) => {
         e.preventDefault();
         console.log('Signup clicked');
-        dispatch(name, email, age, phone, gender, dob, avatar, password);
+        dispatch(getSignup(name, email, age, phone, gender, dob, avatar, password));
     };
 
     return (
