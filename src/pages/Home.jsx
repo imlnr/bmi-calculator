@@ -4,7 +4,7 @@ import Bmi from './Bmi';
 
 const Home = () => {
   const storeState = useSelector((state) => state);
-  console.log(storeState);
+  // console.log(storeState);
   
   return (
     <div>
