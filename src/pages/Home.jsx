@@ -7,7 +7,7 @@ const Home = () => {
   // console.log(storeState);
   
   return (
-    <div>
+    <div className='home-page'>
       {/* <pre>{JSON.stringify(storeState, null, 2)}</pre> */}
       <Bmi/>
     </div>

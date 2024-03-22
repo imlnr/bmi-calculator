@@ -1,9 +1,10 @@
 .bmi-container {
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2%;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-top: 100px;
 }
 
 .input-group {
@@ -22,7 +23,7 @@
     border-radius: 3px;
 }
 
-.bmi-container>button {
+/* .bmi-container>button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -31,7 +32,7 @@
     border: none;
     border-radius: 3px;
     cursor: pointer;
-}
+} */
 
 .result {
     margin-top: 20px;
