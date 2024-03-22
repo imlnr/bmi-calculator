@@ -2,15 +2,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../styles/Forms.css"
+import { useDispatch } from 'react-redux';
+import { getLogged } from '../redux/action';
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const dispatch = useDispatch();
     const handleLogin = (e) => {
         e.preventDefault();
         // Add login logic here
         console.log('Login clicked');
+        dispatch(getLogged(email,password))
     };
 
     return (
